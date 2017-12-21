@@ -24,7 +24,7 @@ D_X = 0.1
 # APPEARANCE
 # --------------------------------------------- 
 CHAR = '.'
-matplotlib.rcParams['axes.unicode_minus'] = False
+#matplotlib.rcParams['axes.unicode_minus'] = False
 # --------------------------------------------- 
 
 
