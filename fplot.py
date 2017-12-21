@@ -22,7 +22,6 @@ CHAR = '.'
 COLOR = 'r'
 # ---------------------------------------------
 
-
 def func_source(func):
     """Return function source string"""
     func_str = str(inspect.getsourcelines(func)[0])
