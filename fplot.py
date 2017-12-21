@@ -5,7 +5,6 @@
 import math
 import inspect
 import numpy as np
-import matplotlib
 import matplotlib.pyplot as plt
 
 # ---------------------------------------------
@@ -18,14 +17,10 @@ FUNCTION = lambda x: math.sin(x)
 MIN_X = -10.0
 MAX_X = 10.0
 D_X = 0.1
-# --------------------------------------------- 
-
-# --------------------------------------------- 
-# APPEARANCE
-# --------------------------------------------- 
+# ---------------------------------------------
 CHAR = '.'
-#matplotlib.rcParams['axes.unicode_minus'] = False
-# --------------------------------------------- 
+COLOR = 'r'
+# ---------------------------------------------
 
 
 def func_source(func):
@@ -39,6 +34,6 @@ X = np.arange(MIN_X, MAX_X, D_X)
 Y = list(map(FUNCTION, X))
 
 fig, ax = plt.subplots()
-ax.plot(X, Y, CHAR)
+ax.plot(X, Y, CHAR, color=COLOR)
 ax.set_title('Function: ' + func_source(FUNCTION))
 plt.show()
