@@ -25,7 +25,6 @@ def func_source(func):
     """Return function source string"""
     func_str = str(inspect.getsourcelines(func)[0])
     func_str = func_str[func_str.find(":")+1:func_str.find(",")].strip()
-    #func_str = func_str.strip("['\\n']").split(" = ")[1].split(":")[1].strip()
     return "y = " + func_str
 
 # Init plot and captions
