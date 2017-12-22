@@ -42,4 +42,3 @@ for f in DATA:
 # Add legend and show  plot
 AX.legend(list(map(func_source, (f[0] for f in DATA))))
 plt.show()
-
