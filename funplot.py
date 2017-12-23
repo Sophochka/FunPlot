@@ -9,23 +9,46 @@ import matplotlib.pyplot as plt
 
 # ---------------------------------------------
 # Type min X, max X and step
-MIN_X = -10.0
-MAX_X = 10.0
+MIN_X = -10
+MAX_X = 10
 D_X = 0.1
+# ---------------------------------------------
+
+
+# Hint 1: Write here your own functions to handle exceptions, log or simplifier expresions
+def safe_div(value):
+    """Sample function"""
+    try:
+        # Hint 2: Use round() to get exact x values
+        # Hint 3: Use float() to get exception instead of getting Inf 
+        x = float(round(value, 1))
+        y = 1/x
+        print('x = ', x, '; y = ', round(y, 4))
+        return y
+    except ZeroDivisionError:
+        print('x = ', x, '; y = error')
+        return None
+
+
 # ---------------------------------------------
 DATA = (
     # Type functions to display after colon, point char, color:
     (lambda x: math.sin(x), '.', 'r'),
-    (lambda x: math.cos(x), '*', 'b')
+    # Hint 4: Skip wrong x values:
+    (lambda x: math.sqrt(x) if x >= 0 else None, '*', 'b'),
+    # Hint 5: Handle exceptions because wrong x values:
+    (lambda x: safe_div(x), '+', 'g'),
 )
 # ---------------------------------------------
+
 
 # Utils
 def func_source(func):
     """Return function source string"""
     func_str = str(inspect.getsourcelines(func)[0])
     func_str = func_str[func_str.find(":")+1:func_str.find(",")].strip()
-    return "y = " + func_str
+    return func_str
+
 
 # Init plot and captions
 FIG, AX = plt.subplots()
